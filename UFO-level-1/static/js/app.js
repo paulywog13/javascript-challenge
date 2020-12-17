@@ -3,7 +3,7 @@ var tableData = data;
 
 // YOUR CODE HERE!
 // Select the button
-var button = d3.select("#button");
+var button = d3.select("#filter-btn");
 
 // Select the form
 var form = d3.select("#form");
@@ -28,17 +28,19 @@ function runEnter() {
   var days_data = tableData.filter(day_data => day_data.datetime === inputDate);
   console.log(days_data);
   //Gather the data from the days_data to be dislayed on in the table
-  var dataDate = days_data.map(day_data => day_data.datetime);
-  var dataCity = days_data.map(day_data => day_data.city);
-  var dataState = days_data.map(day_data => day_data.state);
-  var dataCountry = days_data.map(day_data => day_data.country);
-  var dataShape = days_data.map(day_data => day_data.shape);
-  var dataDuration = days_data.map(day_data => day_data.durationMinutes);
-  var dataComments = days_data.map(day_data => day_data.comments);
+  var tbody = d3.select("tbody");
+  days_data.forEach((days_data) => {
+    var row = tbody.append("tr");
+    Object.entries(days_data).forEach(([key, value]) => {
+      var cell = row.append("td");
+      cell.text(value);
+    });
+  });
+  
 
   // Display the data in the table on the website. Need to use a "this"
-  tbody = d3.select("tbody");
-  tbody.append(tr).text(dataDate)
+//   tbody = d3.select("tbody");
+//   tbody.append("<tr><td>`dataDate`<td></tr>);
 
 
 
