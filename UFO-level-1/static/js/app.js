@@ -30,6 +30,7 @@ function runEnter() {
   //Gather the data from the days_data to be dislayed on in the table
   var tbody = d3.select("tbody");
   days_data.forEach((days_data) => {
+     // Display the data in the table on the website. 
     var row = tbody.append("tr");
     Object.entries(days_data).forEach(([key, value]) => {
       var cell = row.append("td");
@@ -37,15 +38,6 @@ function runEnter() {
     });
   });
   
-
-  // Display the data in the table on the website. Need to use a "this"
-//   tbody = d3.select("tbody");
-//   tbody.append("<tr><td>`dataDate`<td></tr>);
-
-
-
-
-
 
 
 
