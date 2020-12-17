@@ -27,6 +27,18 @@ function runEnter() {
   
   var days_data = tableData.filter(day_data => day_data.datetime === inputDate);
   console.log(days_data);
+  //Gather the data from the days_data to be dislayed on in the table
+  var dataDate = days_data.map(day_data => day_data.datetime);
+  var dataCity = days_data.map(day_data => day_data.city);
+  var dataState = days_data.map(day_data => day_data.state);
+  var dataCountry = days_data.map(day_data => day_data.country);
+  var dataShape = days_data.map(day_data => day_data.shape);
+  var dataDuration = days_data.map(day_data => day_data.durationMinutes);
+  var dataComments = days_data.map(day_data => day_data.comments);
+
+  // Display the data in the table on the website. Need to use a "this"
+  tbody = d3.select("tbody");
+  tbody.append(tr).text(dataDate)
 
 
 
