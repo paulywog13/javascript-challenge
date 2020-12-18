@@ -3,7 +3,7 @@ var tableData = data;
 
 // YOUR CODE HERE!
 // Select the button
-var button = d3.select("#button");
+var button = d3.select("#button-btn");
 
 // Select the form
 var form = d3.select("#form");
@@ -27,7 +27,16 @@ function runEnter() {
   
   var days_data = tableData.filter(day_data => day_data.datetime === inputDate);
   console.log(days_data);
-
+  //Gather the data from the days_data to be dislayed on in the table
+  var tbody = d3.select("tbody");
+  days_data.forEach((days_data) => {
+     // Display the data in the table on the website. 
+    var row = tbody.append("tr");
+    Object.entries(days_data).forEach(([key, value]) => {
+      var cell = row.append("td");
+      cell.text(value);
+    });
+  });
 
 
 
