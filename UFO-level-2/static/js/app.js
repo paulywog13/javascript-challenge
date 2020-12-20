@@ -16,8 +16,9 @@ function uploadData(data){
     });
 };
 
+// Use the uploadData function to fill the data table 
+uploadData(data)
 // Select the button
-// uploadData(data)
 var button = d3.select("#filter-btn");
 
 // Select the form
@@ -42,21 +43,21 @@ function runEnter() {
 
   // Use the form input to filter the data by date
   if (inputDate){
-    days_data = data.filter(day_data => day_data.datetime === inputDate);
-  console.log(days_data)}
+    filter_data = data.filter(day_data => day_data.datetime === inputDate);
+  console.log(filter_data)}
   if (inputCity){
-    days_data = data.filter(city_data => city_data.city === inputCity);
-    console.log(days_data)}
+    filter_data = data.filter(city_data => city_data.city === inputCity);
+    console.log(filter_data)}
   if (inputState){
-    days_data = data.filter(state_data => state_data.state === inputState);
+    filter_data = data.filter(state_data => state_data.state === inputState);
   }
   if (inputCountry){
-    days_data = data.filter(country_data => country_data.country === inputCountry);
+    filter_data = data.filter(country_data => country_data.country === inputCountry);
   }
   if (inputShape){
-    days_data = data.filter(shape_data => shape_data.shape === inputShape);
+    filter_data = data.filter(shape_data => shape_data.shape === inputShape);
   }
 
-uploadData(days_data);
+uploadData(filter_data);
   
 };

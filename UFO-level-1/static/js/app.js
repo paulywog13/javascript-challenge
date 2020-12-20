@@ -13,8 +13,9 @@ function uploadData(data){
     });
 };
 
+// Use the uploadData function to fill the data table 
+uploadData(data)
 // Select the button
-// uploadData(data)
 var button = d3.select("#filter-btn");
 
 // Select the form
@@ -40,6 +41,7 @@ function runEnter() {
   var days_data = data.filter(day_data => day_data.datetime === inputDate);
   console.log(days_data);
 
+// Update the table with the date as the filter
 uploadData(days_data)  
 $("#datetime").val('')
 
