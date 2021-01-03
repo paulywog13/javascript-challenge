@@ -106,6 +106,7 @@ select {
 
 .hero h1 {
   margin-top: 200px;
+  font-family: 'Audiowide', cursive;
   font-size: 0.1rem;
   animation: title 1.2s forwards linear;
 }
