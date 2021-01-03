@@ -1,3 +1,6 @@
+// from data.js
+// var tableData = data; -- DID NOT USE THIS VARIABLE
+
 // YOUR CODE HERE!
 // data is from the data.js file
 

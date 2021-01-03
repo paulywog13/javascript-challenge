@@ -1,5 +1,5 @@
 // from data.js
-// var tableData = data;
+// var tableData = data; -- DID NOT USE THIS VARIABLE
 
 // YOUR CODE HERE!
 // data is from data.js
